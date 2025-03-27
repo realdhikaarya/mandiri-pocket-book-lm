@@ -1,4 +1,4 @@
-!(https://github.com/realdhikaarya/mandiri-pocket-book-lm/blob/main/public/images/livin-merchant-app.png)
+https://github.com/realdhikaarya/mandiri-pocket-book-lm/blob/main/public/images/livin-merchant-app.png
 # Bank Mandiri Livin Merchant Pocket Book
 
 A comprehensive pocket book app for Bank Mandiri teams and customers to assist with Livin Merchant and EDC onboarding processes. This application simplifies the lengthy steps into a user-friendly, easy-to-navigate guide that can be used to simplify and ease the instructions for registration.
