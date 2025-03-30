@@ -25,4 +25,4 @@ If you want to make changes to the pocket book:
 
 ## Contact
 
-For assistance or further customization, please contact realdhikaarya@gmail.com or follow me at LinkedIn: www.linkedin.com/in/dhika-arya
+For assistance or further customization, please contact realdhikaarya@gmail.com or message me on LinkedIn: www.linkedin.com/in/dhika-arya
