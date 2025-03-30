@@ -16,6 +16,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Bank Mandiri Livin Merchant Pocket Book",
   description: "A comprehensive pocket book for Bank Mandiri sales team to assist with Livin Merchant and EDC onboarding",
+  icons: {
+    icon: "/images/icon.svg",
+  }
 };
 
 export default function RootLayout({

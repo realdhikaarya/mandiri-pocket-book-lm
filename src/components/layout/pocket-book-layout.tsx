@@ -44,6 +44,21 @@ const SIDEBAR_ITEMS = [
   }
 ];
 
+const AssistanceCard = () => (
+  <Card className="bg-blue-600 border-none p-4 text-white">
+    <div className="flex flex-col gap-2">
+      <div className="font-medium">{t("Need assistance?")}</div>
+      <div className="text-sm opacity-90">{t("Contact Mandiri Call 14000")}</div>
+      <Button variant="outline" className="mt-2 w-full text-black border-white hover:bg-white/10" asChild>
+        <Link href="http://wa.me/628118414000" target="_blank" rel="noopener noreferrer">
+          <HelpCircle className="mr-2 h-4 w-4" />
+          {t("Get Help")}
+        </Link>
+      </Button>
+    </div>
+  </Card>
+);
+
 export default function PocketBookLayout() {
   const [activeTab, setActiveTab] = useState("home");
   const [menuOpen, setMenuOpen] = useState(false);
@@ -117,7 +132,7 @@ export default function PocketBookLayout() {
             <div className="flex flex-col gap-2">
               <div className="font-medium">{t("Need assistance?")}</div>
               <div className="text-sm opacity-90">{t("Contact Mandiri Call 14000")}</div>
-              <Button variant="outline" className="mt-2 w-full text-white border-white hover:bg-white/10" asChild>
+              <Button variant="outline" className="mt-2 w-full text-black border-white hover:bg-white/10" asChild>
                 <Link href="http://wa.me/628118414000" target="_blank" rel="noopener noreferrer">
                   <HelpCircle className="mr-2 h-4 w-4" />
                   {t("Get Help")}
@@ -191,6 +206,9 @@ export default function PocketBookLayout() {
                   <span>{item.title}</span>
                 </button>
               ))}
+              <div className="mt-auto pt-4 pb-6 px-3">
+              <AssistanceCard />
+            </div>
             </div>
 
             <div className="mt-auto pb-4">
