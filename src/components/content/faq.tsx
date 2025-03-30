@@ -3,17 +3,32 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Search } from "lucide-react";
+import { useState, useEffect } from "react";
 
 export default function FAQContent() {
+  const [activeTab, setActiveTab] = useState("general");
+  
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  }, []);
+
   return (
-    <div className="space-y-8">
+    <motion.div 
+      className="space-y-8"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.6 }}
+    >
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.3 }}
-        className="pb-4"
+        transition={{ duration: 0.5, delay: 0.1 }}
+        className="pb-4 relative"
       >
         <h1 className="text-3xl font-bold text-primary mb-3">Pertanyaan yang Sering Diajukan</h1>
         <p className="text-gray-600 max-w-4xl">
@@ -35,16 +50,50 @@ export default function FAQContent() {
         />
       </div>
       */}
-
-      <Tabs defaultValue="general" className="w-full">
-        <TabsList className="grid w-full grid-cols-4 mb-6">
-          <TabsTrigger value="general">Umum</TabsTrigger>
-          <TabsTrigger value="registration">Pendaftaran</TabsTrigger>
-          <TabsTrigger value="operations">Operasional</TabsTrigger>
-          <TabsTrigger value="payment">Pembayaran</TabsTrigger>
-        </TabsList>
-
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+      >
+        <Tabs 
+          defaultValue="general" 
+          className="w-full"
+          onValueChange={(value) => setActiveTab(value)}
+        >
+          <TabsList className="grid w-full grid-cols-4 mb-6">
+            {["general", "registration", "operations", "payment"].map((tab) => (
+              <TabsTrigger
+                key={tab}
+                value={tab}
+                asChild
+              >
+                <motion.div
+                  whileHover={{ scale: 1.03 }}
+                  whileTap={{ scale: 0.97 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  {tab === "general" && "Umum"}
+                  {tab === "registration" && "Pendaftaran"}
+                  {tab === "operations" && "Operasional"}
+                  {tab === "payment" && "Pembayaran"}
+                </motion.div>
+              </TabsTrigger>
+            ))}
+          </TabsList>
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activeTab}
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -20 }}
+            transition={{ duration: 0.3 }}
+          >
         <TabsContent value="general" className="space-y-6">
+          <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.4 }}
+                  >
           <Card>
             <CardHeader>
               <CardTitle className="text-primary">Pertanyaan Umum</CardTitle>
@@ -91,6 +140,7 @@ export default function FAQContent() {
               </Accordion>
             </CardContent>
           </Card>
+          </motion.div>
         </TabsContent>
 
         <TabsContent value="registration" className="space-y-6">
@@ -381,6 +431,8 @@ export default function FAQContent() {
             </CardContent>
           </Card>
         </TabsContent>
+      </motion.div>
+      </AnimatePresence>
       </Tabs>
 
       <Card className="bg-blue-50 border-primary/20">
@@ -421,6 +473,10 @@ export default function FAQContent() {
           </div>
         </CardContent>
       </Card>
-    </div>
+  </motion.div>
+  <div className="h-16 md:h-0" aria-hidden="true"></div>
+    <div className="h-16 md:h-0" aria-hidden="true"></div>
+    <div className="h-16 md:h-0" aria-hidden="true"></div>
+  </motion.div>
   );
 }

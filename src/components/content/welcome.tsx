@@ -4,6 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { useState, useEffect } from "react";
 import { Store, CreditCard, ChevronRight } from "lucide-react";
 import Link from "next/link";
 import { t } from "@/lib/translations";
@@ -15,8 +16,15 @@ const fadeIn = {
 };
 
 export default function WelcomeContent() {
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  }, []);
+
   return (
-    <div className="space-y-8">
+    <div className="space-y-8 pb-32 md:pb-16 min-h-screen"> {/* Increased bottom padding and set min-height */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -109,31 +117,37 @@ export default function WelcomeContent() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.3 }}
+        id="how-to-use" /* Added ID for easier targeting */
+        className="relative" /* Added relative positioning */
       >
         <Card className="bg-blue-50 border-primary/20">
           <CardHeader>
             <CardTitle className="text-primary">{t("How to use this Pocket Book")}</CardTitle>
           </CardHeader>
-          <CardContent className="space-y-2">
-            <p className="flex items-center gap-2">
-              <span className="bg-primary text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-medium">1</span>
+          <CardContent className="space-y-4">
+            <p className="flex items-start gap-2">
+              <span className="bg-primary text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-medium flex-shrink-0 mt-0.5">1</span>
               <span>{t("Navigate using the sidebar to find the specific guide you need")}</span>
             </p>
-            <p className="flex items-center gap-2">
-              <span className="bg-primary text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-medium">2</span>
+            <p className="flex items-start gap-2">
+              <span className="bg-primary text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-medium flex-shrink-0 mt-0.5">2</span>
               <span>{t("Follow the step-by-step instructions with your customer")}</span>
             </p>
-            <p className="flex items-center gap-2">
-              <span className="bg-primary text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-medium">3</span>
+            <p className="flex items-start gap-2">
+              <span className="bg-primary text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-medium flex-shrink-0 mt-0.5">3</span>
               <span>{t("Use the FAQ section for common questions and troubleshooting")}</span>
             </p>
-            <p className="flex items-center gap-2">
-              <span className="bg-primary text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-medium">4</span>
+            <p className="flex items-start gap-2">
+              <span className="bg-primary text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-medium flex-shrink-0 mt-0.5">4</span>
               <span>{t("Access quick reference guides for on-the-spot assistance")}</span>
             </p>
           </CardContent>
         </Card>
       </motion.div>
+      
+      {/* Empty div to ensure content is scrollable to the end, fix the problem where the page stop scrolling before the end */}
+      <div className="h-16 md:h-0" aria-hidden="true"></div>
+      <div className="h-16 md:h-0" aria-hidden="true"></div>
     </div>
   );
 }

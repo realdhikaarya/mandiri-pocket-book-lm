@@ -6,10 +6,17 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { useState, useEffect } from "react";
 import { Check, Download, ChevronRight, QrCode, Smartphone, Store, ClipboardList, CreditCard, CircleAlert } from "lucide-react";
 import  Link  from "next/link";
 
 export default function LivenMerchantContent() {
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  }, []);
   return (
     <div className="space-y-8">
       <motion.div
@@ -268,6 +275,7 @@ export default function LivenMerchantContent() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
+            className="relative"
           >
             <Card>
               <CardHeader>
@@ -506,6 +514,9 @@ export default function LivenMerchantContent() {
           </Accordion>
         </CardContent>
       </Card>
+      <div className="h-16 md:h-0" aria-hidden="true"></div>
+      <div className="h-16 md:h-0" aria-hidden="true"></div>
+      <div className="h-16 md:h-0" aria-hidden="true"></div>
     </div>
   );
 }
