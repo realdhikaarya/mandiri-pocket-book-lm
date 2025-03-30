@@ -59,6 +59,19 @@ const AssistanceCard = () => (
   </Card>
 );
 
+const DownloadLivin = () => (
+  <Card className="bg-white border-none p-4 text-white">
+    <div className="flex flex-col gap-2">
+    <Button variant="ghost" className="text-primary flex items-center gap-1" asChild>
+      <Link href="https://play.google.com/store/apps/details?id=id.bmri.livinmerchant&pcampaignid=web_share" target="_blank" rel="noopener noreferrer">
+        <Download className="h-4 w-4" />
+          <span>{t("Download")}</span>
+      </Link>
+    </Button>
+  </div>
+  </Card>
+);
+
 export default function PocketBookLayout() {
   const [activeTab, setActiveTab] = useState("home");
   const [menuOpen, setMenuOpen] = useState(false);
@@ -207,8 +220,11 @@ export default function PocketBookLayout() {
                 </button>
               ))}
               <div className="mt-auto pt-4 pb-6 px-3">
-              <AssistanceCard />
-            </div>
+                <AssistanceCard />
+              </div>
+              <div className="mt-auto pt-4 pb-6 px-3">
+                <DownloadLivin />
+              </div>
             </div>
 
             <div className="mt-auto pb-4">
