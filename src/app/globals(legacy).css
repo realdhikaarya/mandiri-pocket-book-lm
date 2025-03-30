@@ -97,34 +97,6 @@
   }
   body {
     @apply bg-background text-foreground;
-    overflow-x: hidden;
-  }
-
-  /* Mobile scrolling fixes */
-  html, body {
-    max-width: 100vw;
-    height: 100%;
-    position: relative;
-  }
-
-  /* Table responsiveness */
-  table {
-    overflow-x: auto;
-    display: block;
-    max-width: 100%;
-  }
-
-  @media (min-width: 768px) {
-    table {
-      display: table;
-      max-width: 100%;
-    }
-  }
-
-  /* Image responsiveness */
-  img {
-    max-width: 100%;
-    height: auto;
   }
 }
 
@@ -143,37 +115,4 @@
 
 .mandiri-shadow {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
-}
-
-/* Mobile responsive styles */
-.overflow-scroll-container {
-  -webkit-overflow-scrolling: touch;
-  overflow-y: auto;
-  max-height: calc(100vh - 4rem);
-}
-
-/* Fix for mobile tap color */
-@media (max-width: 767px) {
-  * {
-    -webkit-tap-highlight-color: transparent;
-  }
-}
-
-/* Responsive content areas */
-.content-container {
-  width: 100%;
-  overflow-x: hidden;
-  padding: 0.5rem;
-}
-
-@media (min-width: 768px) {
-  .content-container {
-    padding: 1rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  .content-container {
-    padding: 1.5rem;
-  }
 }
