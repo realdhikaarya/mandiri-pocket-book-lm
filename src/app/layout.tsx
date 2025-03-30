@@ -18,6 +18,9 @@ export const metadata: Metadata = {
   description: "A comprehensive pocket book for Bank Mandiri sales team to assist with Livin Merchant and EDC onboarding",
   icons: {
     icon: "/images/icon.svg",
+  },
+  other: {
+    "google-site-verification": "C974f2pQ1KRHq1HSAmA_E4FpyHJo1ySeO3q3DANCpdw",
   }
 };
 
