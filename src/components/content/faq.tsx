@@ -474,9 +474,6 @@ export default function FAQContent() {
         </CardContent>
       </Card>
   </motion.div>
-  <div className="h-16 md:h-0" aria-hidden="true"></div>
-    <div className="h-16 md:h-0" aria-hidden="true"></div>
-    <div className="h-16 md:h-0" aria-hidden="true"></div>
   </motion.div>
   );
 }

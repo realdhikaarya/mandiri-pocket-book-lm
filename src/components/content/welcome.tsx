@@ -144,10 +144,6 @@ export default function WelcomeContent() {
           </CardContent>
         </Card>
       </motion.div>
-      
-      {/* Empty div to ensure content is scrollable to the end, fix the problem where the page stop scrolling before the end */}
-      <div className="h-16 md:h-0" aria-hidden="true"></div>
-      <div className="h-16 md:h-0" aria-hidden="true"></div>
     </div>
   );
 }

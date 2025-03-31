@@ -514,9 +514,6 @@ export default function LivenMerchantContent() {
           </Accordion>
         </CardContent>
       </Card>
-      <div className="h-16 md:h-0" aria-hidden="true"></div>
-      <div className="h-16 md:h-0" aria-hidden="true"></div>
-      <div className="h-16 md:h-0" aria-hidden="true"></div>
     </div>
   );
 }

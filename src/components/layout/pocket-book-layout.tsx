@@ -227,7 +227,7 @@ export default function PocketBookLayout() {
               </div>
             </div>
 
-            <div className="mt-auto pb-4">
+            {/*<div className="mt-auto pb-4">
               <Card className="bg-blue-600 border-none p-4 text-white">
                 <div className="flex flex-col gap-2">
                   <div className="font-medium">{t("Need assistance?")}</div>
@@ -240,7 +240,7 @@ export default function PocketBookLayout() {
                   </Button>
                 </div>
               </Card>
-            </div>
+            </div>*/}
           </div>
         </div>
 
