@@ -19,6 +19,10 @@ export const metadata: Metadata = {
   icons: {
     icon: "/images/icon.svg",
   },
+  metadataBase: new URL('https://mandiri-pocket-book.netlify.app'),
+  alternates: {
+    canonical: '/',
+  },
   other: {
     "google-site-verification": "C974f2pQ1KRHq1HSAmA_E4FpyHJo1ySeO3q3DANCpdw",
   }
